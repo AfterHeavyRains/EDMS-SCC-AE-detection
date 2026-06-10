@@ -27,6 +27,7 @@ requirements.txt
 | Phase map | `code/matlab/evaluation/Phase_Map_Visualization.m` |
 | Detection pipeline + result figures (AGR/EOR, event categories, weak-event quality, Δt) | `code/matlab/evaluation/Entropy_Detection_Viz_updated_all.m` |
 | Main evaluation table | `code/matlab/evaluation/eval_and_save_all_basepara.m` |
+| Comparison methods | `code/matlab/evaluation/run_comparison_methods.m` |
 | Parameter optimization | `code/matlab/evaluation/optimize_and_sweep_*.m` |
 | Ablation study | `code/matlab/evaluation/run_ablation_studyBEIJING.m` |
 | SNR characterization | `code/matlab/evaluation/compute_SNR_noise_characterization.m` |
