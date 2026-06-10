@@ -1,0 +1,21 @@
+# MATLAB generated files
+*.asv
+*.m~
+
+# Python generated files
+__pycache__/
+*.pyc
+
+# Large local raw-data folders (root-level only; keeps data/processed_result_text_csv/* tracked)
+/result2mm/
+/result4mm/
+/result6mm/
+/result8mm/
+*_304H/
+*_304H_new/
+
+# Archives and temporary files
+*.zip
+*.rar
+*.7z
+_tmp*/
