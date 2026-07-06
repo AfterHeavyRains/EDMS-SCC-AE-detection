@@ -20,12 +20,11 @@ if nargin>=1 && strcmpi(mode,'sweep_k')
 end
 
 % 一次评估四厚度（Original+Layered），保存 CSV/MAT/LaTeX，全程不做寻优
-%此版本是确定参数后，对四个样本的评估版本，整体结果向好。4mm的文件替换为_1文件，解决了AGR和EOR的异常值问题。
 % 放到文件末尾的新函数：sweep_small() 用于小范围扫掠；在命令行调用即可。eval_and_save_all('sweep');
 
 
 %% ===== 基本路径与目录拼接 =====
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm4', mkData(4), 'mm6', mkData(6), 'mm8', mkData(8));
 thicks   = {'mm2','mm4','mm6','mm8'};
@@ -785,7 +784,7 @@ end
 
 function [TOP, ALL] = sweep_small()
 %% 路径与数据源（复用你主程序里的设置）
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm4', mkData(4), 'mm6', mkData(6), 'mm8', mkData(8));
 thicks   = {'mm2','mm4','mm6','mm8'};
@@ -1003,7 +1002,7 @@ end
 
 % ====== k-sensitivity sweep for reviewer response ======
 function sweep_k_sensitivity()
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 dataDir  = fullfile(rootBase, 'result2mm', 'result2mm', 'data_denoised');
 k_values = 2.0 : 0.5 : 4.5;   % 6 values: shows full trade-off curve
 idxAll   = 1:40;      % first 40 files — same subset as opt_log_fine.csv

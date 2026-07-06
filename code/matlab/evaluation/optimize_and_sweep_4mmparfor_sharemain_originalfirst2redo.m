@@ -5,7 +5,7 @@ clear
 clearvars -except DO_* rootPath dataFolder saveDir nSamples subsetN subsetIdx best_params
 clc; if isempty(gcp('nocreate')), parpool; end
 %% =============== Paths & basic config ===============
-rootPath   = 'E:\Data\SCC_tensile\20250109_2000kHz_4mmQ235H_1000N_1';
+rootPath   = 'PATH\TO\raw\4mm_sample';   % <-- raw 4mm acquisition folder (see README)
 dataFolder = rootPath;                     % 该目录下有 data1.mat / data1.txt ... data200.*
 saveDir    = fullfile(rootPath, 'results_opt');  % 结果另存到当前数据目录的子目录
 if ~exist(saveDir,'dir'), mkdir(saveDir); end

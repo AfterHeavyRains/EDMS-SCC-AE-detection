@@ -5,7 +5,7 @@ clear
 clearvars -except DO_* rootPath dataFolder saveDir nSamples subsetN subsetIdx best_params
 clc; if isempty(gcp('nocreate')), parpool; end
 %% =============== Paths & basic config ===============
-rootPath   = 'E:\Code\SCC_matlab_code\results\results\result2mm\result2mm';
+rootPath   = 'PATH\TO\full_dataset\result2mm';   % <-- 2mm sample folder (see README)
 dataFolder = fullfile(rootPath, 'data_denoised');   % data1.mat ... data200.mat
 saveDir    = rootPath;
 save_fig   = @(h,fn) exportgraphics(h, fullfile(saveDir,fn), 'Resolution', 300);

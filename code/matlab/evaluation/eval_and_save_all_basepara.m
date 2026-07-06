@@ -6,7 +6,6 @@
 %  复现最优版本 方案A
 function eval_and_save_all_basepara(mode)
 % 一次评估四厚度（Original+Layered），保存 CSV/MAT/LaTeX，全程不做寻优
-%此版本是确定参数后，对四个样本的评估版本，整体结果向好。4mm的文件替换为_1文件，解决了AGR和EOR的异常值问题。
 % 放到文件末尾的新函数：sweep_small() 用于小范围扫掠；在命令行调用即可。eval_and_save_all('sweep');
 
 %% ===== 最优融合版 base（建议命名 base_opt）=====
@@ -48,7 +47,7 @@ if nargin>=1 && strcmpi(mode,'sweep')
 end
 
 %% ===== 基本路径与目录拼接 =====
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm4', mkData(4), 'mm6', mkData(6), 'mm8', mkData(8));
 thicks   = {'mm2','mm4','mm6','mm8'};
@@ -710,7 +709,7 @@ end
 function [TOP, ALL] = sweep_small(base)
 
 %% ===== 路径与数据源（复用主程序设置） =====
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm4', mkData(4), 'mm6', mkData(6), 'mm8', mkData(8));
 thOrder  = {'mm2','mm4','mm6','mm8'};
@@ -840,7 +839,7 @@ function run_ablation_study()
 % 运行消融实验（Table 2）
 % Liu Guangyu 2025-10-09
 
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm4', mkData(4), 'mm6', mkData(6), 'mm8', mkData(8));
 thicks   = {'mm2','mm4','mm6','mm8'};

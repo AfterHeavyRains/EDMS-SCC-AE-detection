@@ -1,6 +1,6 @@
 %% =============================================================
 % AE Event Detection (Method 1: Multi-step Composite Detection) with Pseudo Labeling & Visualization
-% Author: [Your Name]   Date: 2025-08-26
+% Date: 2025-08-26
 %
 % 功能概览：
 %   ✅ 多步骤复合检测（归一化熵 + 熵率辅助 + 能量过滤 + 突发性检测）

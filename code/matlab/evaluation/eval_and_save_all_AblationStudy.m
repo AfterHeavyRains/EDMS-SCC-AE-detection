@@ -14,7 +14,7 @@ function eval_and_save_all(mode)
 
 
 %% ===== 基本路径与目录拼接 =====
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm4', mkData(4), 'mm6', mkData(6), 'mm8', mkData(8));
 thicks   = {'mm2','mm4','mm6','mm8'};
@@ -727,7 +727,7 @@ function [TOP, ALL] = sweep_small()
 % - 结果自动落 CSV
 
 %% 路径与数据源（复用你主程序里的设置）
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm6', mkData(6), 'mm8', mkData(8)); % ← 不含 4mm
 thOrder  = {'mm2','mm6','mm8'};

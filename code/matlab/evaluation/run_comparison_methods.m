@@ -7,7 +7,7 @@
 function run_comparison_methods()
 
 %% ===== 路径配置 =====
-rootBase = 'E:\Code\SCC_matlab_code\results\Entropy_Detection_Viz_updated_all';
+rootBase = 'PATH\TO\full_dataset';   % <-- set to your local full-dataset root (see README)
 mkData   = @(mm) fullfile(rootBase, sprintf('result%imm',mm), sprintf('result%imm',mm), 'data_denoised');
 dataDirs = struct('mm2', mkData(2), 'mm4', mkData(4), 'mm6', mkData(6), 'mm8', mkData(8));
 thicks   = {'mm2','mm4','mm6','mm8'};
